@@ -1,9 +1,8 @@
-from flask import Flask, render_template, request, jsonify
-import requests
+from flask import Flask, render_template, jsonify, request
 from bs4 import BeautifulSoup
+import requests
 
-app.debug = False
-app = Flask(__main__)
+app = Flask(__name__)
 
 def get_links(url):
     response = requests.get(url)
@@ -20,12 +19,5 @@ def get_links(url):
 def index():
     return render_template('index.html')
 
-@app.route('/get-links', methods=['GET'])
-def extract_links():
-    url = request.args.get('url')
-    links = get_links(url)
-    return jsonify({'links': links})
-
 if __name__ == '__main__':
     app.run(port=8080)
-
