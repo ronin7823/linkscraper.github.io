@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Recon Tool</title>
+  <style>
+    /* CSS styles */
+    body {
+      background-color: #000;
+      color: #0f0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    #canvas {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .container {
+      margin: 20px auto;
+      max-width: 500px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      color: #ff0000;
+      text-align: center;
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    button {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff3333;
+    }
+    .result-box {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      height: 200px;
+      overflow: auto;
+      background-color: #333;
+    }
+    .result-box p {
+      margin: 0;
+      padding: 5px 0;
+    }
+    .download-button {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .download-button button {
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .download-button button:hover {
+      background-color: #ff3333;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <div class="container">
+    <h1>Recon Tool</h1>
+    <label for="domain-input">Enter a domain name:</label>
+    <input type="text" id="domain-input">
+    <button onclick="searchLinks()">Search Links</button>
+    <div class="result-box" id="result-box"></div>
+    <div class="download-button">
+      <button onclick="downloadCSV()">Download PDF</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
